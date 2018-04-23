@@ -1,0 +1,259 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+  <h:head>
+    <h:title>poultry form</h:title>
+    <model>
+      <instance>
+        <data id="build_poultry-form_1523973015">
+          <meta>
+            <instanceID/>
+          </meta>
+          <Date>
+            dd/mm/yy
+          </Date>
+          <Client_Name>
+            Name
+          </Client_Name>
+          <Site_Location/>
+          <Bird_Types/>
+          <Average_Weight/>
+          <Site_Image/>
+          <Type_of_feeders/>
+          <Type_of_Drinkers/>
+        </data>
+      </instance>
+      <itext>
+        <translation lang="English">
+          <text id="/data/Date:label">
+            <value>Date</value>
+          </text>
+          <text id="/data/Date:hint">
+            <value>[dd/mm/yy]</value>
+          </text>
+          <text id="/data/Date:constraintMsg">
+            <value>Input correct date</value>
+          </text>
+          <text id="/data/Client_Name:label">
+            <value>Name</value>
+          </text>
+          <text id="/data/Client_Name:hint">
+            <value>[Nantume Edrina]</value>
+          </text>
+          <text id="/data/Client_Name:requiredMsg">
+            <value>Data required</value>
+          </text>
+          <text id="/data/Site_Location:label">
+            <value>Site_Location</value>
+          </text>
+          <text id="/data/Site_Location:hint">
+            <value>[Location]</value>
+          </text>
+          <text id="/data/Site_Location:requiredMsg">
+            <value>Data required</value>
+          </text>
+          <text id="/data/Bird_Types:label">
+            <value>Type(s) of Birds reared</value>
+          </text>
+          <text id="/data/Bird_Types:hint">
+            <value>[Select the type of birds reared]</value>
+          </text>
+          <text id="/data/Bird_Types:option0">
+            <value>Layers</value>
+          </text>
+          <text id="/data/Bird_Types:option1">
+            <value>Broilers</value>
+          </text>
+          <text id="/data/Bird_Types:option2">
+            <value>kroilers</value>
+          </text>
+          <text id="/data/Bird_Types:option3">
+            <value>Local Chicken</value>
+          </text>
+          <text id="/data/Bird_Types:option4">
+            <value>Off Layers</value>
+          </text>
+          <text id="/data/Average_Weight:label">
+            <value>Average weight</value>
+          </text>
+          <text id="/data/Average_Weight:hint">
+            <value>[Enter the average weight of birds[kgs]]</value>
+          </text>
+          <text id="/data/Site_Image:label">
+            <value>Site Image</value>
+          </text>
+          <text id="/data/Site_Image:hint">
+            <value>Upload image for the site</value>
+          </text>
+          <text id="/data/Type_of_feeders:label">
+            <value>Type of feeders</value>
+          </text>
+          <text id="/data/Type_of_feeders:hint">
+            <value>[Select type of feeders used]</value>
+          </text>
+          <text id="/data/Type_of_feeders:requiredMsg">
+            <value>please select one option</value>
+          </text>
+          <text id="/data/Type_of_feeders:option0">
+            <value>Trough</value>
+          </text>
+          <text id="/data/Type_of_feeders:option1">
+            <value>Open container bin</value>
+          </text>
+          <text id="/data/Type_of_feeders:option2">
+            <value>Basic feed dispenser</value>
+          </text>
+          <text id="/data/Type_of_feeders:option3">
+            <value>Tread-plate feeders</value>
+          </text>
+          <text id="/data/Type_of_feeders:option4">
+            <value>PVC-Tube feeders</value>
+          </text>
+          <text id="/data/Type_of_feeders:option5">
+            <value>Home-made feeders</value>
+          </text>
+          <text id="/data/Type_of_feeders:option6">
+            <value>Feeding by hand</value>
+          </text>
+          <text id="/data/Type_of_Drinkers:label">
+            <value>Type of Drinkers</value>
+          </text>
+          <text id="/data/Type_of_Drinkers:hint">
+            <value>[select the type(s) of drinkers used]</value>
+          </text>
+          <text id="/data/Type_of_Drinkers:option0">
+            <value>Pan &amp; Jar</value>
+          </text>
+          <text id="/data/Type_of_Drinkers:option1">
+            <value>Linear waterer</value>
+          </text>
+          <text id="/data/Type_of_Drinkers:option2">
+            <value>Water basin</value>
+          </text>
+          <text id="/data/Type_of_Drinkers:option3">
+            <value>Bell type automatic</value>
+          </text>
+          <text id="/data/Type_of_Drinkers:option4">
+            <value>Nipple drinker</value>
+          </text>
+          <text id="/data/Type_of_Drinkers:option5">
+            <value>Manual drinker</value>
+          </text>
+        </translation>
+      </itext>
+      <bind nodeset="/data/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
+      <bind nodeset="/data/Date" type="date" jr:constraintMsg="jr:itext('/data/Date:constraintMsg')"/>
+      <bind nodeset="/data/Client_Name" type="string" required="true()" jr:requiredMsg="jr:itext('/data/Client_Name:requiredMsg')"/>
+      <bind nodeset="/data/Site_Location" type="geopoint" required="true()" jr:requiredMsg="jr:itext('/data/Site_Location:requiredMsg')"/>
+      <bind nodeset="/data/Bird_Types" type="select1" required="true()"/>
+      <bind nodeset="/data/Average_Weight" type="int"/>
+      <bind nodeset="/data/Site_Image" type="binary" required="true()"/>
+      <bind nodeset="/data/Type_of_feeders" type="select1" required="true()" jr:requiredMsg="jr:itext('/data/Type_of_feeders:requiredMsg')"/>
+      <bind nodeset="/data/Type_of_Drinkers" type="select1"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/data/Date">
+      <label ref="jr:itext('/data/Date:label')"/>
+      <hint ref="jr:itext('/data/Date:hint')"/>
+    </input>
+    <input ref="/data/Client_Name">
+      <label ref="jr:itext('/data/Client_Name:label')"/>
+      <hint ref="jr:itext('/data/Client_Name:hint')"/>
+    </input>
+    <input ref="/data/Site_Location" appearance="maps">
+      <label ref="jr:itext('/data/Site_Location:label')"/>
+      <hint ref="jr:itext('/data/Site_Location:hint')"/>
+    </input>
+    <select1 ref="/data/Bird_Types">
+      <label ref="jr:itext('/data/Bird_Types:label')"/>
+      <hint ref="jr:itext('/data/Bird_Types:hint')"/>
+      <item>
+        <label ref="jr:itext('/data/Bird_Types:option0')"/>
+        <value>Layers</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/Bird_Types:option1')"/>
+        <value>Broilers</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/Bird_Types:option2')"/>
+        <value>kroilers</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/Bird_Types:option3')"/>
+        <value>Local_Chicken</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/Bird_Types:option4')"/>
+        <value>Off_Layers</value>
+      </item>
+    </select1>
+    <range ref="/data/Average_Weight" start="1" end="1000" step="1">
+      <label ref="jr:itext('/data/Average_Weight:label')"/>
+      <hint ref="jr:itext('/data/Average_Weight:hint')"/>
+    </range>
+    <upload ref="/data/Site_Image" mediatype="image/*">
+      <label ref="jr:itext('/data/Site_Image:label')"/>
+      <hint ref="jr:itext('/data/Site_Image:hint')"/>
+    </upload>
+    <select1 ref="/data/Type_of_feeders">
+      <label ref="jr:itext('/data/Type_of_feeders:label')"/>
+      <hint ref="jr:itext('/data/Type_of_feeders:hint')"/>
+      <item>
+        <label ref="jr:itext('/data/Type_of_feeders:option0')"/>
+        <value>Trough</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/Type_of_feeders:option1')"/>
+        <value>Open_container_bin</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/Type_of_feeders:option2')"/>
+        <value>Basic_feed_dispenser</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/Type_of_feeders:option3')"/>
+        <value>Tread-plate_feeders</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/Type_of_feeders:option4')"/>
+        <value>PVC-Tube_feeders</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/Type_of_feeders:option5')"/>
+        <value>Home_made</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/Type_of_feeders:option6')"/>
+        <value>Feeding_by_hand</value>
+      </item>
+    </select1>
+    <select1 ref="/data/Type_of_Drinkers">
+      <label ref="jr:itext('/data/Type_of_Drinkers:label')"/>
+      <hint ref="jr:itext('/data/Type_of_Drinkers:hint')"/>
+      <item>
+        <label ref="jr:itext('/data/Type_of_Drinkers:option0')"/>
+        <value>Pan_and_Jar</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/Type_of_Drinkers:option1')"/>
+        <value>Linear_waterer</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/Type_of_Drinkers:option2')"/>
+        <value>Water_basin</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/Type_of_Drinkers:option3')"/>
+        <value>Bell_type</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/Type_of_Drinkers:option4')"/>
+        <value>Nipple_drinker</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/Type_of_Drinkers:option5')"/>
+        <value>Manual_drinker</value>
+      </item>
+    </select1>
+  </h:body>
+</h:html>
